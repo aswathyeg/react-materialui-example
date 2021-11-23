@@ -1,12 +1,14 @@
 
+import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import Navbar from "./components/Navbar/Navbar";
+import theme from './utils/theme';
 
 const App=() =>{
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Navbar/>
-    </div>
+    </ThemeProvider>
   );
 }
 
