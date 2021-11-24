@@ -9,7 +9,7 @@ const Navbar = () => {
 
             <AppBar>
                 <Toolbar>
-                <Typography> bodhii </Typography>
+                <Typography color="secondary"> bodhii </Typography>
 
                 <Tabs>
                     <Tab label='Courses'/>
@@ -26,7 +26,7 @@ const Navbar = () => {
                 </Tabs><Tabs>
                     <Tab label='Openings'/>
                 </Tabs>
-                <Button varient="contained" color="secondary">Profile</Button>
+                <Button varient="contained" color="secondary">Login</Button>
                 </Toolbar>
             </AppBar>
         </div>
