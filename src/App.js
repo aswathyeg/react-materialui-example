@@ -2,7 +2,7 @@
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import Navbar from "./components/Navbar/Navbar";
-import theme from './utils/theme';
+import theme from './components/utils/theme';
 
 const App=() =>{
   return (
