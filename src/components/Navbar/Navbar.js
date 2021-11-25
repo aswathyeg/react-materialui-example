@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -12,6 +13,7 @@ import { SiWebmoney } from "react-icons/si";
 import { RiParentLine } from "react-icons/ri";
 import { IoMdHappy } from "react-icons/io";
 import { GiTeacher } from "react-icons/gi";
+import DrawerComponent from "./DrawerComponent/DrawerComponent";
 
 
 const Navbar = () => {
@@ -25,6 +27,11 @@ const Navbar = () => {
         setAnchorEl(null)
 
     }
+//Breakpoints
+    const theme=useTheme();
+    console.log(theme);
+    const isMatch=useMediaQuery(theme.breakpoints.down('sm'));
+
 
     return (
         <div>
@@ -37,7 +44,8 @@ const Navbar = () => {
                         {/* <GiBookmarklet/> */}
                         bodhii
                     </Typography>
-
+{isMatch?(<DrawerComponent/>):(
+<>
                     <Tabs>
 
                         <Tab icon={<FiBookOpen />}
@@ -49,12 +57,11 @@ const Navbar = () => {
                         <Tab icon={<SiWebmoney />} label='Fees' />
                         <Tab icon={<IoMdHappy />} label='Holidays' />
 
-
-
-
-
                     </Tabs>
                     <Button varient="contained" color="secondary">Login</Button>
+                    </>
+                    )}
+
                 </Toolbar>
             </AppBar>
 
@@ -63,10 +70,11 @@ const Navbar = () => {
                 onClose={handleMenuClose}
                 anchorEl={anchorEl} open={Boolean(anchorEl)}>
                 <MenuItem onClick={handleMenuClose}>M0</MenuItem>
-                <MenuItem onClick={handleMenuClose}> M1</MenuItem>
+                <MenuItem onClick={handleMenuClose}>M1</MenuItem>
                 <MenuItem onClick={handleMenuClose}>M2</MenuItem>
                 <MenuItem onClick={handleMenuClose}>M3</MenuItem>
             </Menu>
+            <DrawerComponent/>
         </div>
     );
 };
