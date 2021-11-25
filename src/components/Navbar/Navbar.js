@@ -15,60 +15,58 @@ import { GiTeacher } from "react-icons/gi";
 
 
 const Navbar = () => {
-   const[anchorEl,setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
 
-   const handleOpenMenu=e=>{
-    setAnchorEl( e.currentTarget)
+    const handleOpenMenu = e => {
+        setAnchorEl(e.currentTarget)
 
-   }
-   const handleMenuClose=e=>{
-    setAnchorEl(null)
+    }
+    const handleMenuClose = e => {
+        setAnchorEl(null)
 
-   }
-     
+    }
+
     return (
         <div>
 
             <AppBar className="appBar">
                 <Toolbar>
 
-              
-                <Typography color="secondary"> 
-                {/* <GiBookmarklet/> */}
-           bodhii
-                 </Typography>
 
-                <Tabs>
+                    <Typography color="secondary">
+                        {/* <GiBookmarklet/> */}
+                        bodhii
+                    </Typography>
 
-                    <Tab icon={<FiBookOpen/>} 
-                    onMouseOver={handleOpenMenu} 
-                    area-controls='menu'
-                    label='Classes'/>
-               
-                    <Tab  icon={<SiWebmoney/>} label='Fees'/>
-                
-                    <Tab   icon={<RiParentLine/>}label='Parents'/>
-                
-                    <Tab  icon={<IoMdHappy/>}label='Holidays'/>
-               
-                    <Tab  icon={<GiTeacher/>}label='Teachers'/>
-               
-                    
+                    <Tabs>
 
-                </Tabs>
-                <Button varient="contained" color="secondary">Login</Button>
+                        <Tab icon={<FiBookOpen />}
+                            onMouseOver={handleOpenMenu}
+                            area-controls='menu'
+                            label='Classes' />
+                        <Tab icon={<GiTeacher />} label='Teachers' />
+                        <Tab icon={<RiParentLine />} label='Parents' />
+                        <Tab icon={<SiWebmoney />} label='Fees' />
+                        <Tab icon={<IoMdHappy />} label='Holidays' />
+
+
+
+
+
+                    </Tabs>
+                    <Button varient="contained" color="secondary">Login</Button>
                 </Toolbar>
             </AppBar>
 
-            <Menu id='menu' 
-            // style={{marginTop:50}} //for display menu 'under'the button
-            onClose={handleMenuClose}
-            anchorEl={anchorEl} open={Boolean(anchorEl)}>  
+            <Menu id='menu'
+                // style={{marginTop:50}} //for display menu 'under'the button
+                onClose={handleMenuClose}
+                anchorEl={anchorEl} open={Boolean(anchorEl)}>
                 <MenuItem onClick={handleMenuClose}>M0</MenuItem>
                 <MenuItem onClick={handleMenuClose}> M1</MenuItem>
                 <MenuItem onClick={handleMenuClose}>M2</MenuItem>
                 <MenuItem onClick={handleMenuClose}>M3</MenuItem>
-                </Menu>
+            </Menu>
         </div>
     );
 };
