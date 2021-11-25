@@ -7,7 +7,7 @@ palette:{
         main:'#26a69a',
     },
     secondary:{
-        main:'#c51162',
+        main:'#880e4f',
     },
     
 },
